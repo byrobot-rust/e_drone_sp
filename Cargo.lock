@@ -78,7 +78,7 @@ dependencies = [
 
 [[package]]
 name = "e_drone_sp"
-version = "21.3.1"
+version = "21.3.2"
 dependencies = [
  "e_drone",
  "serialport",
