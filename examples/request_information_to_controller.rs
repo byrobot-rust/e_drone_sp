@@ -1,30 +1,3 @@
-# e_drone_sp
-Rust library for BYROBOT drones.
-
-* Tested
-  - Windows 10
-
-
-<br>
-<br>
-
-
-## Example
-
-### Cargo.toml
-```
-[dependencies]
-e_drone_sp="21.*"
-e_drone="21.*"
-```
-
-
-<br>
-<br>
-
-
-### main.rs
-```rust
 extern crate e_drone_sp;
 
 use e_drone::system::{*};
@@ -59,27 +32,4 @@ fn handler(data: &Data) {
         _ => {},
     }
 }
-```
-
-
-<br>
-<br>
-
-
-
-## Examples in library
-
-### Source code
-
-https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
-
-
-<br>
-<br>
-
-### Request information from controller
-```
-cargo run --example request_information_to_controller
-```
-
 

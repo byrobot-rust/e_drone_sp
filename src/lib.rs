@@ -7,7 +7,7 @@ use std::time::{Duration, Instant};
 
 use e_drone::communication::{*};
 use e_drone::communication::receiver::{*};
-use e_drone::base::system::{*};
+use e_drone::system::{*};
 use e_drone::protocol::{*};
 
 
@@ -88,16 +88,22 @@ impl Drone {
     }
 
 
-
-    pub fn request(&mut self, device_type: DeviceType, data_type: DataType)
+    // -- Transfer ----------------------------------------------------------------------------------
+    pub fn send(&mut self, slice_data: &[u8])
     {
         match &mut self.port {
-            Ok(port) => { match port.write(&transfer::request(device_type, data_type)) {
+            Ok(port) => { match port.write(slice_data) {
                 Ok(_len) => { self.time_transfer = Instant::now(); },
                 _ => {},
             } },
             _ => {},
         }
+    }
+
+
+    pub fn request(&mut self, device_type: DeviceType, data_type: DataType)
+    {
+        self.send(&transfer::request(device_type, data_type));
     }
 
 }
