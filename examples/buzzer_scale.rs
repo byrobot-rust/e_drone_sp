@@ -2,7 +2,6 @@ extern crate e_drone_sp;
 
 use e_drone::system::{*};
 use e_drone::protocol::{*};
-use e_drone::protocol::display::{*};
 use e_drone::communication::{*};
 use e_drone_sp::{*};
 
@@ -15,9 +14,12 @@ fn main() {
     }
 
     drone.request(DeviceType::Controller, DataType::Information);
-
-    drone.send(&transfer::draw_clear_all(Pixel::White));
-    drone.send(&transfer::draw_line(20, 20, 50, 50, Pixel::Black, Line::Solid));
+    
+    drone.send(&transfer::buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::C4, 200));
+    drone.send(&transfer::buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::D4, 200));
+    drone.send(&transfer::buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::E4, 200));
+    drone.send(&transfer::buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::F4, 200));
+    drone.send(&transfer::buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::G4, 200));
 
     loop {
         handler(&drone.check());

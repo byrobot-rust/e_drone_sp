@@ -69,6 +69,8 @@ fn handler(data: &Data) {
 
 ## Examples in library
 
+<br>
+
 ### Source code
 
 https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
@@ -77,7 +79,19 @@ https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
 <br>
 <br>
 
-### Request information from controller
+
+### Clone Library
+
+```
+git clone https://github.com/byrobot-rust/e_drone_sp/
+```
+
+
+<br>
+<br>
+
+
+### Run
 ```
 cargo run --example buzzer_hz
 ```
@@ -85,7 +99,7 @@ cargo run --example buzzer_hz
 cargo run --example buzzer_scale
 ```
 ```
-cargo run --example display_drawline
+cargo run --example draw
 ```
 ```
 cargo run --example request_information

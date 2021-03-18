@@ -88,6 +88,22 @@ impl Drone {
     }
 
 
+    pub fn sleep(&self, time_sleep: u128)
+    {
+        let time_start = Instant::now();
+
+        loop {
+            if time_start.elapsed().as_millis() > time_sleep {
+                break;
+            }
+
+            if time_start.elapsed().as_millis() > 1000 * 60 * 60 {
+                break;
+            }
+        }
+    }
+
+
     // -- Transfer ----------------------------------------------------------------------------------
     pub fn send(&mut self, slice_data: &[u8])
     {
