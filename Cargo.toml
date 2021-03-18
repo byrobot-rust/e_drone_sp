@@ -21,4 +21,4 @@ bench = false
 [dependencies]
 serialport="4.0.0"
 e_drone="21.*"
-chrono="*"
+chrono="0.4.*"
