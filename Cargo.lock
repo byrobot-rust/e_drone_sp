@@ -67,9 +67,9 @@ dependencies = [
 
 [[package]]
 name = "e_drone"
-version = "21.3.21"
+version = "21.3.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d226ba5442ede8716e1a96f47014e52a3bdd8d1ad943216d0bd650aa023d69f0"
+checksum = "0f3a60ccff4a348c40aaaf389d1ca8552a8621a9af5358bd662026390523bdf3"
 dependencies = [
  "byteorder",
  "num_enum",
@@ -78,7 +78,7 @@ dependencies = [
 
 [[package]]
 name = "e_drone_sp"
-version = "21.3.3"
+version = "21.3.4"
 dependencies = [
  "e_drone",
  "serialport",

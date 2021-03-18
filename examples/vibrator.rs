@@ -1,34 +1,8 @@
-# e_drone_sp
-Rust library for BYROBOT drones.
-
-* Tested
-  - Windows 10
-
-
-<br>
-<br>
-
-
-## Example
-
-### Cargo.toml
-```
-[dependencies]
-e_drone_sp="21.*"
-e_drone="21.*"
-```
-
-
-<br>
-<br>
-
-
-### main.rs
-```rust
 extern crate e_drone_sp;
 
 use e_drone::system::{*};
 use e_drone::protocol::{*};
+use e_drone::communication::{*};
 use e_drone_sp::{*};
 
 
@@ -40,6 +14,8 @@ fn main() {
     }
 
     drone.request(DeviceType::Controller, DataType::Information);
+
+    drone.send(&transfer::vibrator(200, 200, 2000));
 
     loop {
         handler(&drone.check());
@@ -59,39 +35,4 @@ fn handler(data: &Data) {
         _ => {},
     }
 }
-```
-
-
-<br>
-<br>
-
-
-
-## Examples in library
-
-### Source code
-
-https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
-
-
-<br>
-<br>
-
-### Request information from controller
-```
-cargo run --example buzzer_hz
-```
-```
-cargo run --example buzzer_scale
-```
-```
-cargo run --example display_drawline
-```
-```
-cargo run --example request_information
-```
-```
-cargo run --example vibrator
-```
-
 
