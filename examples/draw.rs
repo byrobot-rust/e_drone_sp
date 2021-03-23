@@ -15,9 +15,6 @@ fn main() {
     if drone.is_connected() == false {
         return;
     }
-
-    drone.request(DeviceType::Controller, DataType::Information);
-
     drone.send(&transfer::draw_clear_all(Pixel::Black));
     drone.sleep(1000);
 
@@ -49,8 +46,6 @@ fn main() {
         drone.send(&transfer::draw_string_align(0, 128, 40, Align::Center, Font::LM10x16, Pixel::White, str_time));
         drone.sleep(27);
         
-        handler(&drone.check());
-
         if drone.get_time_passed_from_start() > 20000 {
             break;
         }
@@ -59,14 +54,3 @@ fn main() {
     drone.send(&transfer::draw_string(40, 20, Font::LM10x16, Pixel::White, String::from(" BYE ")));
     drone.sleep(1000);
 }
-
-
-fn handler(data: &Data) {
-    match data {
-        Data::Information(information) => {
-            println!("{:?}", information);
-        },
-        _ => {},
-    }
-}
-

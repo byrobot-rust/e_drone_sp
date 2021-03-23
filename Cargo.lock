@@ -86,9 +86,9 @@ dependencies = [
 
 [[package]]
 name = "e_drone"
-version = "21.3.22"
+version = "21.3.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f3a60ccff4a348c40aaaf389d1ca8552a8621a9af5358bd662026390523bdf3"
+checksum = "d32192ecb78e2980dd8c163d9d185515c164c0dd5aa7a1e3305358ebbed51c5e"
 dependencies = [
  "byteorder",
  "num_enum",
@@ -97,7 +97,7 @@ dependencies = [
 
 [[package]]
 name = "e_drone_sp"
-version = "21.3.5"
+version = "21.3.6"
 dependencies = [
  "chrono",
  "e_drone",
@@ -106,9 +106,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.89"
+version = "0.2.91"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "538c092e5586f4cdd7dd8078c4a79220e3e168880218124dcbce860f0ea938c6"
+checksum = "8916b1f6ca17130ec6568feccee27c156ad12037880833a3b842a823236502e7"
 
 [[package]]
 name = "libudev"
@@ -260,18 +260,18 @@ checksum = "24d5f089152e60f62d28b835fbff2cd2e8dc0baf1ac13343bef92ab7eed84548"
 
 [[package]]
 name = "serde"
-version = "1.0.124"
+version = "1.0.125"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bd761ff957cb2a45fbb9ab3da6512de9de55872866160b23c25f1a841e99d29f"
+checksum = "558dc50e1a5a5fa7112ca2ce4effcb321b0300c0d4ccf0776a9f60cd89031171"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.124"
+version = "1.0.125"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1800f7693e94e186f5e25a28291ae1570da908aff7d97a095dec1e56ff99069b"
+checksum = "b093b7a2bb58203b5da3056c05b4ec1fed827dcfdb37347a8841695263b3d06d"
 dependencies = [
  "proc-macro2",
  "quote",

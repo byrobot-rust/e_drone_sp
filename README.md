@@ -93,16 +93,19 @@ git clone https://github.com/byrobot-rust/e_drone_sp/
 
 ### Run
 ```
-cargo run --example buzzer_hz
+cargo run --example button
 ```
 ```
-cargo run --example buzzer_scale
+cargo run --example buzzer
 ```
 ```
 cargo run --example draw
 ```
 ```
-cargo run --example request_information
+cargo run --example joystick
+```
+```
+cargo run --example request
 ```
 ```
 cargo run --example vibrator

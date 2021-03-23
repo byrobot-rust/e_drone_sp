@@ -2,7 +2,6 @@ extern crate e_drone_sp;
 
 use e_drone::system::{*};
 use e_drone::protocol::{*};
-use e_drone::communication::{*};
 use e_drone_sp::{*};
 
 
@@ -12,27 +11,34 @@ fn main() {
     if drone.is_connected() == false {
         return;
     }
-
+    
     drone.request(DeviceType::Controller, DataType::Information);
-
-    drone.send(&transfer::buzzer_hz(DeviceType::Controller, 2000, 200));
-
-    loop {
+    
+    loop
+    {
         handler(&drone.check());
-
-        if drone.get_time_passed_from_last_transfer() > 1200 {
+        
+        if drone.get_time_passed_from_last_transfer() > 10000 {
             break;
         }
     }
 }
 
 
-fn handler(data: &Data) {
+fn handler(data: &Data) -> bool {
     match data {
+        Data::None => {
+            return false;
+        }
         Data::Information(information) => {
             println!("{:?}", information);
         },
+        Data::Joystick(joystick) => {
+            println!("{:?}", joystick);
+        }
         _ => {},
     }
+    
+    true
 }
 

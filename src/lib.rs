@@ -3,6 +3,7 @@ extern crate e_drone;
 
 
 use serialport::{*};
+use std::{thread};
 use std::time::{Duration, Instant};
 
 use e_drone::communication::{*};
@@ -31,10 +32,11 @@ impl Drone {
             receiver: Receiver::new(),
             buffer: [0u8; 1024],
             port: serialport::new(port_name, 57_600)
-                .timeout(Duration::from_millis(100))
+                .timeout(Duration::from_millis(1))
                 .open()
         }
     }
+
 
     pub fn is_connected(&mut self) -> bool
     {
@@ -43,6 +45,7 @@ impl Drone {
             _ => { false },
         }
     }
+
 
     pub fn check(&mut self) -> Data
     {
@@ -72,6 +75,7 @@ impl Drone {
         Data::None
     }
 
+
     pub fn get_time_passed_from_start(&self) -> u128
     {
         self.time_start.elapsed().as_millis()
@@ -88,38 +92,35 @@ impl Drone {
     }
 
 
-    pub fn sleep(&self, time_sleep: u128)
+    pub fn sleep(&self, time_sleep_ms: u64)
     {
-        let time_start = Instant::now();
+        let duration_time_sleep_ms = Duration::from_millis(time_sleep_ms);
 
-        loop {
-            if time_start.elapsed().as_millis() > time_sleep {
-                break;
-            }
-
-            if time_start.elapsed().as_millis() > 1000 * 60 * 60 {
-                break;
-            }
-        }
+        thread::sleep(duration_time_sleep_ms);
     }
 
 
     // -- Transfer ----------------------------------------------------------------------------------
-    pub fn send(&mut self, slice_data: &[u8])
+    pub fn send(&mut self, slice_data: &[u8]) -> bool
     {
         match &mut self.port {
             Ok(port) => { match port.write(slice_data) {
-                Ok(_len) => { self.time_transfer = Instant::now(); },
+                Ok(_len) => {
+                    self.time_transfer = Instant::now();
+                    return true;
+                },
                 _ => {},
             } },
             _ => {},
         }
+
+        false
     }
 
 
-    pub fn request(&mut self, device_type: DeviceType, data_type: DataType)
+    pub fn request(&mut self, device_type: DeviceType, data_type: DataType) -> bool
     {
-        self.send(&transfer::request(device_type, data_type));
+        self.send(&transfer::request(device_type, data_type))
     }
 
 }
