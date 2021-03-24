@@ -15,6 +15,7 @@ fn main() {
     if drone.is_connected() == false {
         return;
     }
+
     drone.send(&transfer::draw_clear_all(Pixel::Black));
     drone.sleep(1000);
 

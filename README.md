@@ -104,10 +104,13 @@ cargo run --example button
 cargo run --example buzzer
 ```
 ```
-cargo run --example draw
+cargo run --example display
 ```
 ```
 cargo run --example joystick
+```
+```
+cargo run --example light
 ```
 ```
 cargo run --example request
