@@ -97,7 +97,7 @@ dependencies = [
 
 [[package]]
 name = "e_drone_sp"
-version = "21.3.7"
+version = "21.3.8"
 dependencies = [
  "chrono",
  "e_drone",
