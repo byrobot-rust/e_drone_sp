@@ -7,7 +7,8 @@ use e_drone_sp::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new("COM75");
+    let mut drone: Drone = Drone::new("COM75");             // windows
+    //let mut drone: Drone = Drone::new("/dev/ttyACM0");      // linux
 
     if drone.is_connected() == false {
         return;
