@@ -57,3 +57,4 @@ fn main() {
     drone.buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::C4, 100);
     drone.sleep(2000);
 }
+

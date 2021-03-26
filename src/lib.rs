@@ -1,6 +1,7 @@
 extern crate serialport;
 extern crate e_drone;
 
+pub mod updater;
 
 use serialport::{*};
 use std::{thread};

@@ -3,7 +3,7 @@ Rust library for BYROBOT drones.
 
 * Tested
   - Windows 10 (x64)
-  - Ubuntu 20.04 (x64)
+  - Ubuntu linux 20.04 (x64)
 
 - Support
   * [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
@@ -39,7 +39,8 @@ use e_drone_sp::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new("COM75");
+    let mut drone: Drone = Drone::new("COM75");             // windows
+    //let mut drone: Drone = Drone::new("/dev/ttyACM0");      // linux
 
     if drone.is_connected() == false {
         return;
