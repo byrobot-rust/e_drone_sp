@@ -1,6 +1,6 @@
 [package]
 name = "e_drone_sp"
-version = "21.3.8"
+version = "21.3.9"
 authors = ["Sanghyo Lee <realwolfmax@gmail.com>"]
 description = "Rust library for BYROBOT Drones."
 documentation = "https://docs.rs/e_drone_sp"
@@ -22,3 +22,4 @@ bench = false
 serialport="4.0.0"
 e_drone="21.*"
 chrono="0.4.*"
+

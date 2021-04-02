@@ -4,6 +4,8 @@ Rust library for BYROBOT drones.
 * Tested
   - Windows 10 (x64)
   - Ubuntu linux 20.04 (x64)
+  - macOS Big Sur
+  - Raspberry Pi OS (Raspberry PI Compute Module 4)
 
 - Support
   * [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
