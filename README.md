@@ -7,10 +7,10 @@ Rust library for BYROBOT drones.
   - macOS Big Sur
   - Raspberry Pi OS (Raspberry PI Compute Module 4)
 
-- Support
-  * [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
-  * [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
-  * [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
+* Support
+  - [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
+  - [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
+  - [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
 
 
 <br>
@@ -20,7 +20,7 @@ Rust library for BYROBOT drones.
 ## Example
 
 ### Cargo.toml
-```
+```toml
 [dependencies]
 e_drone_sp="21.*"
 e_drone="21.*"

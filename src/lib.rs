@@ -348,3 +348,4 @@ impl Drone {
         self.send(&transfer::transfer(DataType::DisplayDrawImage, DeviceType::Base, DeviceType::Controller, &DrawImage{x, y, width, height, vec_image}.to_vec()))
     }
 }
+
