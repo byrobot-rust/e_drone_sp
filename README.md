@@ -89,6 +89,21 @@ https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
 <br>
 
 
+### Show in github1s.com
+
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/button.rs" target="_blank">Button</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/buzzer.rs" target="_blank">Buzzer</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/display.rs" target="_blank">Display</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/joystick.rs" target="_blank">Joystick</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/light.rs" target="_blank">Light</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/request.rs" target="_blank">Request</a>
+* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/vibrator.rs" target="_blank">Vibrator</a>
+
+
+<br>
+<br>
+
+
 ### Clone Library
 
 ```
@@ -122,5 +137,4 @@ cargo run --example request
 ```
 cargo run --example vibrator
 ```
-
 
