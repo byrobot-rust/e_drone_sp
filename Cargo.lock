@@ -86,9 +86,9 @@ dependencies = [
 
 [[package]]
 name = "e_drone"
-version = "21.3.26"
+version = "21.3.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb2c440a8734e9336454237f356ef3730417f21cad36c21a2836ed1402ef879b"
+checksum = "fc19b656a769186aa05efed7fc4ce8e6cd036b04f6bab37b372f0c3ba28da5a7"
 dependencies = [
  "byteorder",
  "num_enum",
@@ -106,9 +106,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.91"
+version = "0.2.93"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8916b1f6ca17130ec6568feccee27c156ad12037880833a3b842a823236502e7"
+checksum = "9385f66bf6105b241aa65a61cb923ef20efc665cb9f9bb50ac2f0c4b7f378d41"
 
 [[package]]
 name = "libudev"
@@ -225,9 +225,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.24"
+version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e0704ee1a7e00d7bb417d0770ea303c1bccbabf0ef1667dae92b5967f5f8a71"
+checksum = "a152013215dca273577e18d2bf00fa862b89b24169fb78c4c95aeb07992c9cec"
 dependencies = [
  "unicode-xid",
 ]
@@ -297,9 +297,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.64"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3fd9d1e9976102a03c542daa2eff1b43f9d72306342f3f8b3ed5fb8908195d6f"
+checksum = "48fe99c6bd8b1cc636890bcc071842de909d902c81ac7dab53ba33c421ab8ffb"
 dependencies = [
  "proc-macro2",
  "quote",
