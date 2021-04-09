@@ -6,11 +6,34 @@ Rust library for BYROBOT drones.
   - Ubuntu linux 20.04 (x64)
   - macOS Big Sur
   - Raspberry Pi OS (Raspberry PI Compute Module 4)
+  - Raspberry Pi OS Lite (Raspberry PI Zero)
 
 * Support
   - [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
   - [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
   - [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
+
+
+<br>
+<br>
+
+
+## Dependencies
+
+
+### Linux
+
+If you see an error when you build your project,
+
+```
+error: failed to run custom build command for `libudev-sys v0.1.4`
+```
+
+You need to install '**libudev-dev**'.
+
+```
+sudo apt-get install libudev-dev
+```
 
 
 <br>
@@ -41,8 +64,9 @@ use e_drone_sp::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new("COM75");             // windows
-    //let mut drone: Drone = Drone::new("/dev/ttyACM0");      // linux
+    let mut drone: Drone = Drone::new("COM75");             // Windows 10
+    //let mut drone: Drone = Drone::new("/dev/ttyACM0");      // linux, Raspberry PI USB
+    //let mut drone: Drone = Drone::new("/dev/serial0");      // Raspberry PI UART
 
     if drone.is_connected() == false {
         return;
@@ -91,14 +115,19 @@ https://github.com/byrobot-rust/e_drone_sp/tree/master/examples
 
 ### Show in github1s.com
 
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/button.rs" target="_blank">Button</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/buzzer.rs" target="_blank">Buzzer</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/display.rs" target="_blank">Display</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/joystick.rs" target="_blank">Joystick</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/light.rs" target="_blank">Light</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/request.rs" target="_blank">Request</a>
-* <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/vibrator.rs" target="_blank">Vibrator</a>
+* Drone
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/flight.rs" target="_blank">Flight</a>
 
+<br>
+
+* Controller
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/button.rs" target="_blank">Button</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/buzzer.rs" target="_blank">Buzzer</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/display.rs" target="_blank">Display</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/joystick.rs" target="_blank">Joystick</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/light.rs" target="_blank">Light</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/request.rs" target="_blank">Request</a>
+  - <a href="https://github1s.com/byrobot-rust/e_drone_sp/blob/master/examples/vibrator.rs" target="_blank">Vibrator</a>
 
 <br>
 <br>
@@ -116,6 +145,9 @@ git clone https://github.com/byrobot-rust/e_drone_sp/
 
 
 ### Run
+```
+cargo run --example flight
+```
 ```
 cargo run --example button
 ```

@@ -254,6 +254,11 @@ impl Drone {
 
 
     // -- Buzzer ----------------------------------------------------------------------------------------------
+    pub fn buzzer_stop(&mut self, target: DeviceType) -> bool
+    {
+        self.send(&transfer::transfer(DataType::Buzzer, DeviceType::Base, target, &buzzer::BuzzerHz{mode: buzzer::Mode::Stop, hz:0, time:0}.to_vec()))
+    }
+
     pub fn buzzer_scale(&mut self, target: DeviceType, scale: buzzer::Scale, time: u16) -> bool
     {
         self.send(&transfer::transfer(DataType::Buzzer, DeviceType::Base, target, &buzzer::BuzzerScale{mode: buzzer::Mode::ScaleInstantly, scale, time}.to_vec()))

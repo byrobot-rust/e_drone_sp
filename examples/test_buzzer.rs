@@ -6,7 +6,7 @@ use e_drone_sp::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new("COM37");             // windows
+    let mut drone: Drone = Drone::new("COM75");             // windows
     //let mut drone: Drone = Drone::new("/dev/ttyACM0");      // linux
 
     if drone.is_connected() == false {
@@ -14,6 +14,14 @@ fn main() {
     }
     
     //*
+    drone.buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::C4, 3000);
+    drone.buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::CS4, 3000);
+    drone.sleep(1200);
+    drone.buzzer_stop(DeviceType::Controller);
+    drone.sleep(3200);
+    // */
+
+    /*
     drone.buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::C4, 3000);
     drone.sleep(3200);
     drone.buzzer_scale_reserve(DeviceType::Controller, buzzer::Scale::CS4, 3000);
