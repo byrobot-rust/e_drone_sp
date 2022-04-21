@@ -21,6 +21,7 @@ pub struct Drone
     pub receiver: Receiver,
     pub buffer: [u8; 1024],
     pub port: Result<Box<dyn SerialPort>>,
+    pub flag_show_debug_message: bool,  // 디버깅 정보 표시
 }
 
 
@@ -34,8 +35,17 @@ impl Drone {
             buffer: [0u8; 1024],
             port: serialport::new(port_name, 57_600)
                 .timeout(Duration::from_millis(1))
-                .open()
+                .open(),
+            flag_show_debug_message: false,
         }
+    }
+
+
+    pub fn set_show_debug_message(&mut self, flag_show_debug_message: bool)
+    {
+        self.flag_show_debug_message = flag_show_debug_message;
+        
+        self.receiver.set_show_debug_message(flag_show_debug_message);
     }
 
 
@@ -56,6 +66,11 @@ impl Drone {
                 match length_read {
                     Ok(len) => {
                         if *len > 0 {
+                            if self.flag_show_debug_message 
+                            {
+                                println!("RX: {:X?}", &self.buffer[..*len]);
+                            }
+
                             self.receiver.push_slice(&self.buffer[..*len]);
                         }
 
